@@ -61,7 +61,7 @@ export class TestTouchPage implements OnInit {
       <b>Valiente:</b> Kona<br>
       
       `,
-      audioRoute: 'https://content-api.nyc3.cdn.digitaloceanspaces.com/audio/cavendish.wav',
+      audioRoute: 'https://content-api.nyc3.cdn.digitaloceanspaces.com/audio/cavendish2.wav',
       name: '<b>(1587) El tesoro de Cavendish:</b><br> La travesía por el estrecho de Magallanes',
       zoomLevel: 0,
       originalIndex: 0
@@ -184,7 +184,7 @@ export class TestTouchPage implements OnInit {
       this.isLoadingStep = 1;
       setTimeout(() => {
         this.isLoadingStep = 2;
-        //this.startAlert();
+        this.startAlert();
       }, 2000);
       
     }, 5000);

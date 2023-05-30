@@ -33,22 +33,30 @@
     background: rgba(254, 254, 254, 0);
     background-color: #3e3cca5c;
     /* Cambia el color de fondo del cuadro de la alerta */
-    color: #ffffff
+    color: #ffffff !important;
+    --ion-color-primary: #ffffff !important;
 }
 
 .custom-alert {
-    --ion-color-primary: #ffffff
-        /* Cambia el color principal */
-        --ion-color-primary-contrast: #ffffff;
+    color: #ffffff;
+    --ion-color-primary: #ffffff;
+    /* Cambia el color principal */
+    --ion-color-primary-contrast: #ffffff;
     /* Cambia el color de contraste del texto principal */
-    --ion-color-secondary: #ffffff
-        /* Cambia el color secundario */
-        --ion-color-secondary-contrast: #ffffff
-        /* Cambia el color de contraste del texto secundario */
+    --ion-color-secondary: #ffffff;
+    /* Cambia el color secundario */
+    --ion-color-secondary-contrast: #ffffff;
+    /* Cambia el color de contraste del texto secundario */
 }
 
 
 .custom-alert .alert-message {
     color: #ffffff;
+    --ion-color-primary: #ffffff;
     /* Cambia el color del texto a blanco */
+}
+
+.custom-alert{
+    color: #ffffff;
+    --ion-color-primary: #ffffff;
 }

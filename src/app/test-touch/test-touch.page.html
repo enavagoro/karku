@@ -21,7 +21,7 @@
       [ngClass]="{'align-left': element.originalIndex % 2 === 0, 'align-right': element.originalIndex % 2 !== 0}">
       <div class="element" [style.transform]="'scale(' + setScala(element.zoomLevel) + ')'">
         <img class="image" style="min-height: 150px;" [src]="element.image">
-        <h1 style="font-weight: 400;" [innerHTML]="element.name">{{element.name}}</h1>
+        <h1 style="color: white !important; font-weight: 400;" [innerHTML]="element.name">{{element.name}}</h1>
       </div>
     </div>
   </div>
