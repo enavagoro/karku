@@ -7,7 +7,7 @@ interface ElementWithZoom {
   zoomLevel: number;
   name: string,
   image: string,
-  secondImage?: string,
+  secondImage: string,
   description: string,
   originalIndex: number,
   audioRoute?: string,
@@ -179,7 +179,9 @@ export class TestTouchPage implements OnInit {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.preloadImages(this.elements);
+
     setTimeout(() => {
       this.isLoadingStep = 1;
       setTimeout(() => {
@@ -341,4 +343,33 @@ export class TestTouchPage implements OnInit {
     await alert.present();
   }
 
+  preloadImages(elements: Array<ElementWithZoom>): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      let imagesLoaded = 0;
+      const totalImages = elements.length;
+
+
+      for (const element of elements) {
+        const image = element['image'];
+        const secondImage = element['secondImage'];
+        const imgElement = new Image();
+        const secondImgElement = new Image();
+
+        imgElement.src = image;
+        secondImgElement.src = secondImage;
+        console.log('imgElement.src:', imgElement.src);
+  
+        imgElement.onload = () => {
+          imagesLoaded++;
+          if (imagesLoaded === totalImages) {
+            resolve();
+          }
+        };
+  
+        imgElement.onerror = (error) => {
+          reject(error);
+        };
+      }
+    });
+  }
 }
