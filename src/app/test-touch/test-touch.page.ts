@@ -327,7 +327,7 @@ export class TestTouchPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Bienvenido!',
       message: `
-      Recuerda pinchar las imágenes que aparecen a continuacion!!!`,
+      Recuerda pinchar las imágenes que aparecen a continuación!!!`,
       cssClass: 'custom-alert',
       buttons: [
         {
