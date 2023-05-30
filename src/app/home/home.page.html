@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+    <ion-button (click)="addZoom()"></ion-button>
+    <ion-button (click)="subtractZoom()"></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 *ngIf="!toggle">wea</h1>
+  <div *ngFor="let element of visibleElements; index as i" [ngClass]="{'align-left': element.originalIndex % 2 === 0, 'align-right': element.originalIndex % 2 !== 0}">
+    <div class="element-container">
+      <div class="element" [style.transform]="'scale(' + setScala(element.zoomLevel) + ')'">
+        <img [src]="element.image">
+        <h1>{{element.name}}</h1>
+        <p>{{element.species}}</p>
+      </div>
+    </div>
+  </div>  
+</ion-content>

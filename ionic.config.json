@@ -1,0 +1,8 @@
+{
+  "name": "antarticapp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

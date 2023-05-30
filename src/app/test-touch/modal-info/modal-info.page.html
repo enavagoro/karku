@@ -1,0 +1,111 @@
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container desktop" *ngIf="element?.originalIndex % 2 == 0">
+    <div class="image-container">
+      <img class="image" *ngIf="element.image" src="{{element.secondImage || element.image}}">
+      <div class="audio-player" *ngIf="element.audioRoute">
+        <audio #audioPlayer (timeupdate)="updateProgress()" (loadeddata)="audioLoaded()">
+          <source [src]="element.audioRoute" type="audio/mpeg">
+          Tu navegador no soporta la etiqueta audio.
+        </audio>
+        <div class="play-pause-btn" (click)="togglePlayPause()">
+          <div *ngIf="isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="pause"></ion-icon>
+            </ion-buttons>
+          </div>
+          <div *ngIf="!isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="play"></ion-icon>
+            </ion-buttons>
+          </div>
+        </div>
+        <div id="audioSeekBar" (click)="seek($event)">
+          <div id="audioSeekProgress" [ngStyle]="{ width: progress + '%' }"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-container" *ngIf="element">
+      <h1 class="text-name" *ngIf="element.name" [innerHTML]="element.name">{{element.name}}</h1>
+      <p *ngIf="element.description" [innerHTML]="element.description">{{element.description}}</p>
+      <!--<p *ngIf="element.zoomLevel">{{element.zoomLevel}}</p>-->
+    </div>
+  </div>
+
+  <div class="container desktop" *ngIf="element?.originalIndex % 2 != 0">
+    <div class="text-container" *ngIf="element">
+      <h1 class="text-name" *ngIf="element.name" [innerHTML]="element.name">{{element.name}}</h1>
+      <p *ngIf="element.description" [innerHTML]="element.description">{{element.description}}</p>
+      <!--<p *ngIf="element.zoomLevel">{{element.zoomLevel}}</p>-->
+    </div>
+
+    <div class="image-container">
+      <img class="image" *ngIf="element.image" src="{{element.secondImage || element.image}}">
+      <div class="audio-player" *ngIf="element.audioRoute">
+        <audio #audioPlayer (timeupdate)="updateProgress()" (loadeddata)="audioLoaded()">
+          <source [src]="element.audioRoute" type="audio/mpeg">
+          Tu navegador no soporta la etiqueta audio.
+        </audio>
+        <div class="play-pause-btn" (click)="togglePlayPause()">
+          <div *ngIf="isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="pause"></ion-icon>
+            </ion-buttons>
+          </div>
+          <div *ngIf="!isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="play"></ion-icon>
+            </ion-buttons>
+          </div>
+        </div>
+        <div id="audioSeekBar" (click)="seek($event)">
+          <div id="audioSeekProgress" [ngStyle]="{ width: progress + '%' }"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container portrait">
+    <div class="image-container">
+      <img class="image" *ngIf="element.image" src="{{element.secondImage || element.image}}">
+      <div class="audio-player" *ngIf="element.audioRoute">
+        <audio #audioPlayer (timeupdate)="updateProgress()" (loadeddata)="audioLoaded()">
+          <source [src]="element.audioRoute" type="audio/wav">
+          Tu navegador no soporta la etiqueta audio.
+        </audio>
+        <div class="play-pause-btn" (click)="togglePlayPause()">
+          <div *ngIf="isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="pause"></ion-icon>
+            </ion-buttons>
+          </div>
+          <div *ngIf="!isPlaying">
+            <ion-buttons>
+              <ion-icon slot="icon-only" name="play"></ion-icon>
+            </ion-buttons>
+          </div>
+        </div>
+        <div id="audioSeekBar" (click)="seek($event)">
+          <div id="audioSeekProgress" [ngStyle]="{ width: progress + '%' }"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-container" *ngIf="element">
+      <h1 class="text-name" *ngIf="element.name" [innerHTML]="element.name">{{element.name}}</h1>
+      <p *ngIf="element.description" [innerHTML]="element.description">{{element.description}}</p>
+      <!--<p *ngIf="element.zoomLevel">{{element.zoomLevel}}</p>-->
+    </div>
+  </div>
+</ion-content>

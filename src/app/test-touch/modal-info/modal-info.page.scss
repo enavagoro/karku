@@ -1,0 +1,156 @@
+ion-content{
+    --background: rgb(0,213,191);
+    --background: linear-gradient(90deg, rgba(0,213,191,1) 29%, rgba(143,1,227,1) 81%);
+}
+
+ion-header{
+   --background: rgb(0,213,191);
+   --background: linear-gradient(90deg, rgba(0,213,191,1) 29%, rgba(143,1,227,1) 81%);
+}
+
+ion-toolbar{
+    --overflow: hidden;
+    --background: rgb(0,213,191);
+    --background: linear-gradient(90deg, rgba(0,213,191,1) 29%, rgba(143,1,227,1) 81%);
+}
+
+.header-md::after{
+    width: 0% !important;
+}
+
+.container{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.image-container{
+    width: 45%;
+    margin-top: 5px;
+}
+
+.image{
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 10px;
+}
+
+.text-container{
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    // background-color: red;
+}
+
+//
+
+.right-image-container{
+    width: 40%;
+}
+
+.right-image{
+    width: 60%;
+    margin-left: 30%;
+}
+
+.right-text-container{
+    width: 55.5%;
+    margin-left: 2.5%;
+}
+
+/* */
+
+.audio-player {
+    width: 90%;
+    height: 50px;
+    margin-left: 5%;
+    background-color:#00000045;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.play-pause-btn {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#audioSeekBar {
+    background-color: #bbb;
+    height: 5px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+#audioSeekProgress {
+    background-color: white;
+    height: 100%;
+    width: 0;
+    position: absolute;
+}
+
+.text-name{
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.portrait{
+    display: none;
+}
+
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .desktop{
+        display: none !important;
+    }
+
+    .portrait{
+        display: block;
+    }
+
+    .container{
+        display: block;
+        padding-bottom: 10px;
+    }
+    
+    .image-container{
+        width: 90%;
+        margin-top: 5%;
+        margin-top: 5px;
+        margin-left: 5%;
+    }
+    
+    .right-image-container{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .right-text-container{
+        width: 90%;
+        margin-left: 5%;
+        text-align: justify;
+        margin-top: 10px;
+    }
+
+    .text-container{
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .text-name{
+        width: 100%;
+        margin-top: 0px;
+        text-align: justify;
+    }
+
+    p{
+        width: 100%;
+        text-align: justify;
+    }
+
+}
