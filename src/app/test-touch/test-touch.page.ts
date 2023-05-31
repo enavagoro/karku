@@ -183,12 +183,7 @@ export class TestTouchPage implements OnInit {
     await this.preloadImages(this.elements);
 
     setTimeout(() => {
-      this.isLoadingStep = 1;
-      setTimeout(() => {
-        this.isLoadingStep = 2;
-        this.startAlert();
-      }, 2000);
-      
+      this.startAlert();      
     }, 5000);
 
     const firstElement = this.elements[0];
@@ -329,12 +324,27 @@ export class TestTouchPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Bienvenido!',
       message: `
-      Recuerda pinchar las imágenes que aparecen a continuación!!!`,
+      Recuerda pinchar las imágenes que aparecen a continuación y hacer zoom cuando estés en un dispositivo movil!!!`,
       cssClass: 'custom-alert',
       buttons: [
         {
+          text: 'Ok',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.isLoadingStep = 1;
+            setTimeout(() => {
+                this.isLoadingStep = 2;
+              }, 2000);
+          }
+        },
+        {
           text: 'Entendido  ',
           handler: () => {
+          this.isLoadingStep = 1;
+          setTimeout(() => {
+              this.isLoadingStep = 2;
+            }, 2000);
           }
         }
       ]
